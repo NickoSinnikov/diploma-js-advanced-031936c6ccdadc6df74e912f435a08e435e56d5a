@@ -86,6 +86,27 @@ export default class GameController {
         this.userTeam.length + userTeamPositions.length
       );
       this.addPositionCharacted(this.userTeam, this.enemyTeam);
+    } else if (this.level === 3) {
+      this.userTeam = generateTeam(Team.getUserTeam(), 2, 2);
+      this.enemyTeam = generateTeam(
+        Team.getEnemyTeam(),
+        3,
+        this.userTeam.length + userTeamPositions.length
+      );
+      this.addPositionCharacted(this.userTeam, this.enemyTeam);
+    } else if (this.level === 4) {
+      this.userTeam = generateTeam(Team.getUserTeam(), 3, 2);
+      this.enemyTeam = generateTeam(
+        Team.getEnemyTeam(),
+        4,
+        this.userTeam.length + userTeamPositions.length
+      );
+      this.addPositionCharacted(this.userTeam, this.enemyTeam);
+    } else {
+      GamePlay.showMessage(
+        `Ваш результат ${this.ppoint}. Лучший результат ${this.maxPoint}`
+      );
+      return;
     }
   }
 
